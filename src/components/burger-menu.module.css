@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.burgerLabel {
+    position: relative;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2.5px;
+    cursor: pointer;
+    transition: all .4s;
+}
+
+
+.burgerInput {
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+    z-index: -1;
+}
+
+.burgerLine {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 4px;
+    background-color: #01579b;
+    border-radius: 10px;
+}
+
+.burgerLine::before,
+.burgerLine::after
+{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #01579b;
+    transform-origin: left;
+    border-radius: 10px;
+    transition: width 0.4s, transform 0.4s;
+}
+
+.burgerLine::before {
+    transform: translateY(-7px);
+}
+
+.burgerLine::after {
+    transform: translateY(3px);
+}
+
+.burgerInput:checked + .burgerLabel
+.burgerLine::after
+{
+    width: 73%;
+    transform: translateY(-5px) rotate(45deg);
+}
+
+.burgerInput:checked + .burgerLabel
+.burgerLine::before
+{
+    width: 73%;
+    transform: translateY(1.1px) rotate(-45deg);
+}
+
+.burgerInput:checked + .burgerLabel
+{
+    transform: rotate(-270deg)
+
+}

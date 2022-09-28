@@ -1,0 +1,13 @@
+
+.whoiam {
+    max-width: 1024px;
+    width: 90%;
+    height: auto;
+    margin: 0px auto 96px;
+}
+
+.whoiam p {
+    text-align: justify;
+    padding: 0 24px;
+    color: #555
+}
