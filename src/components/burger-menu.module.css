@@ -30,7 +30,7 @@
     display: block;
     width: 20px;
     height: 4px;
-    background-color: #01579b;
+    background-color: var(--secondary-accent);
     border-radius: 10px;
 }
 
@@ -41,7 +41,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    background-color: #01579b;
+    background-color: var(--secondary-accent);
     transform-origin: left;
     border-radius: 10px;
     transition: width 0.4s, transform 0.4s;

@@ -6,7 +6,8 @@
 .icondiv {
     margin: 0 16px;
     font-size: 1.8rem;
-    color: #01579b
+    color: var(--primary-accent)
+    
 }
 
 .textblock {
@@ -18,10 +19,11 @@
     font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 6px;
+    color: var(--bn-text);
 }
 
 .text {
     font-size: 0.8rem;
     line-height: 1.3rem;
-    color: #777
+    color: var(--secondary-text)
 }

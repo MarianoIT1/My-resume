@@ -9,5 +9,5 @@
 .whoiam p {
     text-align: justify;
     padding: 0 24px;
-    color: #555
+    color: var(--secondary-text)
 }

@@ -2,15 +2,16 @@ import React from 'react';
 import s from './Whatido.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {} from '@fortawesome/fontawesome-svg-core'
-import {faObjectGroup, faCode, faPaintBrush, faUsersLine, faPeopleGroup} from '@fortawesome/free-solid-svg-icons'
+import {faObjectGroup, faCode, faPaintBrush, faPeopleGroup} from '@fortawesome/free-solid-svg-icons'
 import WIDCard from "./WIDCard.jsx"
 import ProjectCard from './ProjectCard';
 import Fade from 'react-reveal/Fade';
 import Title from "./Title"
 import weatherImg from "./img/mitWeather.png"
+import projectImg from "./img/underconstruction.png"
 
 const lorem = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam illum harum maxime provident eos blanditiis ea beatae reiciendis natus totam?"
-const projectImg = "https://concepto.de/wp-content/uploads/2015/03/paisaje-800x409.jpg"
+
 
 export default function Whatido(props) {
     var whatido = 

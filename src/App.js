@@ -1,41 +1,66 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
-import {Helmet} from 'react-helmet'
+import {useState} from 'react'
+
 
 function App() {
+
+  const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+  const [toggle, setToggle] = useState(theme === 'dark' ? true : false)
+
+  const switchTheme = () => {
+    setTheme((curr) => (curr === 'light' ? "dark" : "light"))
+    setToggle(theme === 'dark' ? true : false)
+  }
   return (
-    <div className="App">
-      <Helmet>
-        <title>Mariano Ibarra</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
-        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png"/>
-        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png"/>
-        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png"/>
-        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png"/>
-        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png"/>
-        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png"/>
-        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png"/>
-        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png"/>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png"/>
-        <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png"/>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png"/>
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-        <link rel="manifest" href="/manifest.json"/>
-        <meta name="msapplication-TileColor" content="#ffffff"/>
-        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
-        <meta name="theme-color" content="#ffffff"></meta>
-      </Helmet>
-      <Header />
-      <Main />
-      <Footer />
-    </div>
+      <div className="App" data-theme={theme}>
+        <Header switchTheme={switchTheme} toggle={toggle} />
+        <Main />
+        <Footer />
+      </div>
   );
+}
+
+function useLocalStorage(key, initialValue) {
+  // State to store our value
+  // Pass initial state function to useState so logic is only executed once
+  const [storedValue, setStoredValue] = useState(() => {
+    if (typeof window === "undefined") {
+      return initialValue;
+    }
+    try {
+      // Get from local storage by key
+      const item = window.localStorage.getItem(key);
+      // Parse stored json or if none return initialValue
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      // If error also return initialValue
+      console.log(error);
+      return initialValue;
+    }
+  });
+  // Return a wrapped version of useState's setter function that ...
+  // ... persists the new value to localStorage.
+  const setValue = (value) => {
+    try {
+      // Allow value to be a function so we have same API as useState
+      const valueToStore =
+        value instanceof Function ? value(storedValue) : value;
+      // Save state
+      setStoredValue(valueToStore);
+      // Save to local storage
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem(key, JSON.stringify(valueToStore));
+      }
+    } catch (error) {
+      // A more advanced implementation would handle the error case
+      console.log(error);
+    }
+  };
+  return [storedValue, setValue];
 }
 
 export default App;

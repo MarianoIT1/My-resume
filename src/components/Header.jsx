@@ -1,12 +1,13 @@
 import React from 'react'
 import s from './Header.module.css'
 import Button from './Button.jsx'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {} from '@fortawesome/fontawesome-svg-core'
-import {faBars, faChevronUp} from '@fortawesome/free-solid-svg-icons'
 import {useState} from 'react'
 import BurgerMenu from './burger-menu'
 import Zoom from 'react-reveal';
+import ToggleTheme from './ToggleTheme'
+
+
 
 
 
@@ -30,11 +31,15 @@ export default function Header(props) {
                     </a>
                 </div>
                 <ul className={s.navbar}>
+                    <ToggleTheme key={1} cbid='cbOne' switchTheme={props.switchTheme} toggle={props.toggle}/>
                     <li><a href='#whoiam'>About me</a></li>
                     <li><a href='#whatido'>My Works</a></li>
                     <li><a href='mailto:marianoibarratesta@outlook.com'><Button text="Contact me!" class="buttonHead"/></a></li>
                 </ul>
+                <div className={s.toggles}>
+                <ToggleTheme key={2} cbid='cbTwo' switchTheme={props.switchTheme} toggle={props.toggle}/>
                 <div className={s.bars}><BurgerMenu change = {() => {setOpen(!open); var head = document.getElementById('header'); cambiarClass(head)}}/></div>
+                </div>
             </div>
             <div>
                 {open &&    

@@ -9,7 +9,7 @@ export default function ProjectCard(props) {
     var projectcard =
     <div className={s.card}>   
         <div className={s.cardHead}>
-            <img src={props.img} alt=""/>
+            <img src={props.img} alt={props.title}/>
         </div>
         <div className={s.cardBody}>
             <h4>{props.title}</h4>
