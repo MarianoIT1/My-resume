@@ -18,20 +18,20 @@
 
 .label:hover {
     background-color: skyblue;
-    transition: background-color 0.2s linear;
+    transition: background-color 0.3s linear;
 
 }
 
 .label:hover .faSun {
     opacity: 1;
     color: white;
-    transition: color 0.2s linear;
+    transition: color 0.3s linear;
 }
 
 .label:hover .faMoon {
     color: white;
     opacity: 1;
-    transition: color 0.2s linear;
+    transition: color 0.3s linear;
 }
 
 .ball {
@@ -42,7 +42,7 @@
     top: 2px;
     left: 2px;
     border-radius: 50%;
-    transition: transform 0.2s linear;
+    transition: transform 0.3s linear;
 }
 
 .checkbox {
@@ -52,7 +52,7 @@
 
 .checkbox:checked + label:hover {
     background-color: purple;
-    transition: background-color 0.2s linear;
+    transition: background-color 0.3s linear;
 
 }
 
@@ -63,7 +63,7 @@
 .faMoon, .faSun {
     color: var(--secondary-text);
     opacity: .5;
-    transition: color 0.2s linear;
+    transition: color 0.3s linear;
 
 }
 
@@ -90,7 +90,7 @@
         top: 2px;
         left: 2px;
         border-radius: 50%;
-        transition: transform 0.2s linear;
+        transition: transform 0.3s linear;
     }
 
     .checkbox:checked + label .ball {

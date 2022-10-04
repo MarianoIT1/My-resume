@@ -21,6 +21,8 @@ code {
   --img-bg: #f5f5f5;
   --img-border: white;
   --img-shadow: rgba(0, 0, 0, .15);
+  --shadow: rgba(0, 0, 0, .08);
+  --shadow-hover: rgba(0, 0, 0, .15);
   --primary-text: #333;
   --secondary-text: #666;
   --link-color: #1111118c;
@@ -42,6 +44,8 @@ code {
   --img-bg: #c7c7c7;
   --img-border: rgb(68,68,68);
   --img-shadow: rgba(0, 0, 0, .45);
+  --shadow: rgba(0, 0, 0, .35);
+  --shadow-hover: rgba(0, 0, 0, .40);
   --primary-text: #f5f5f5;
   --secondary-text: #b5b5b5;
   --link-color: #f5f5f58c;

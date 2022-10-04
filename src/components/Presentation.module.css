@@ -19,7 +19,7 @@
 }
 
 .mainImg {
-    transition: background-color .2s linear, border .2s linear, box-shadow .2s linear;
+    transition: background-color .3s linear, border .3s linear, box-shadow .3s linear;
     background-color: var(--img-bg);
     justify-self: center;
     width: 100%;
