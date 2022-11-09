@@ -1,0 +1,51 @@
+.box {
+    opacity: 1;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-90%, -50%);
+
+    transition: all 1s ease-in-out ;
+}
+
+.box span {
+    z-index: 1000;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-bottom: 1px solid var(--primary-accent) ;
+    border-right: 1px solid var(--primary-accent);
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.box span:nth-child(2){
+    animation-delay: 0.15s
+
+}
+
+.box span:nth-child(1){
+    animation-delay: 0.3s
+    
+}
+
+.boxHidden {
+    opacity: 0;
+    transition: all 1s ease-in-out ;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px)
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px)
+    }
+    
+}

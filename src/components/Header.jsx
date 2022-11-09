@@ -11,6 +11,7 @@ import ToggleTheme from './ToggleTheme'
 
 
 
+
 export default function Header(props) {
     const [open, setOpen] = useState(false);
     function cambiarClass(head) {
@@ -23,6 +24,7 @@ export default function Header(props) {
     var header = 
         <Zoom top>
         <header className={s.close} id='header'>
+            
             <div className={s.headerContainer}>
                 <div className={s.logo}>
                     <a href="">

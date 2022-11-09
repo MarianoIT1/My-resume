@@ -6,6 +6,7 @@ import Button from './Button.jsx';
 import Fade from 'react-reveal/Fade';
 
 
+
 export default function Presentation(props) {
     var presentation = 
     <section className={s.presentation}>
@@ -15,7 +16,8 @@ export default function Presentation(props) {
                     <Row>
                         <Col sm={12} md={6} lg={5}><img className={s.mainImg} src={photo} alt="Mariano Ibarra"/></Col>
                         <Col sm={12} md={6} lg={7}>
-                        <div className={s.mainText}>
+                            <div className={s.mainText}>
+                                
                                 <p>HELLO WORLD</p>
                                 <div className={s.triangle}></div>
                                 <h1><span>I'm</span> Mariano</h1>
