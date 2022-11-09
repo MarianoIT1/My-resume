@@ -122,6 +122,8 @@ header {
 
 .headerContainer li {
     cursor: pointer;
+    background-color: var(--bgColor);
+    z-index: 5;
     color: var(--link-color);
     line-height: 48px;
     list-style-type: none;

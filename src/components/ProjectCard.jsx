@@ -3,6 +3,7 @@ import s from "./ProjectCard.module.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {} from '@fortawesome/fontawesome-svg-core'
 import {faLink} from '@fortawesome/free-solid-svg-icons'
+import {faShoppingBag} from '@fortawesome/free-solid-svg-icons'
 import {faGithub} from '@fortawesome/free-brands-svg-icons'
 
 export default function ProjectCard(props) {
@@ -16,8 +17,8 @@ export default function ProjectCard(props) {
             <p>{props.subtitle}</p>
         </div>
         <div className={s.cardFooter}>
-            <a href={props.ghLink} target="_blank"><FontAwesomeIcon icon={faGithub} className={s.icon}/></a>
-            <a href={props.link} target="_blank"><FontAwesomeIcon icon={faLink} className={s.icon}/></a>
+            {props.ghLink && <a href={props.ghLink} target="_blank"><FontAwesomeIcon icon={faGithub} className={s.icon}/></a>}
+            <a href={props.link} target="_blank"><FontAwesomeIcon icon={ props.store ? faShoppingBag : faLink} className={s.icon}/></a>
         </div>
     </div>;
     return projectcard;
